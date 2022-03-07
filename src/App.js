@@ -10,7 +10,9 @@ function App() {
           Search for a Word
         </p>
       </header>
-      <NameForm/>
+      <div className='results'>
+        <NameForm/>
+      </div>
     </div>
   );
 }
@@ -69,7 +71,7 @@ function Word(props) {
       <>
         <ul>
           {props.word.meanings.map((meaning, index) => {
-            return <Meaning meaning={meaning}/>;
+            return <Meaning meaning={meaning} wordString={props.word.word}/>;
           })}
         </ul>
       </>
@@ -85,7 +87,7 @@ function Meaning(props) {
         <p>{`Part Of Speech: ${props.meaning.partOfSpeech}`}</p>
         <ul>
           {props.meaning.definitions.map((def, index) => {
-            return <p>{def.definition}</p>;
+            return <p>{sanitizeString(def.definition, props.wordString)}</p>;
           })}
         </ul>
       </>
@@ -93,6 +95,13 @@ function Meaning(props) {
     )
   }
   return null;
+}
+
+function sanitizeString(str, word) {
+  const regexBefore = new RegExp(`\\b\\w+${word}\\w*\\b`, 'i');
+  const regexAfter = new RegExp(`\\b\\w*${word}\\w+\\b`, 'i');
+  const temp = str.replace(regexBefore, "(REDACTED)");
+  return temp.replace(regexAfter, "(REDACTED)");
 }
 
 export default App;

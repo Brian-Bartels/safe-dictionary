@@ -11,6 +11,26 @@
   color: white;
 }
 
+.results {
+  background-color: #282060;
+  display: flex;
+  padding: 5rem;
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App {
+  height: 100%;
+}
+
+html, body, #root {
+  height: 100%
+}
+
 .App-link {
   color: #61dafb;
 }
