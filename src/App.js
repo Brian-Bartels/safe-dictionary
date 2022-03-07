@@ -25,7 +25,13 @@ function NameForm() {
 
   const handleSubmit = React.useCallback(async (event) => {
     event.preventDefault();
-    setResponse(await axios(`https://api.dictionaryapi.dev/api/v2/entries/en/${val}`));
+    axios(`https://api.dictionaryapi.dev/api/v2/entries/en/${val}`).then(function(result) {
+      setResponse(result);
+    }).catch(function (error) {
+      // handle error
+      setResponse("Not A Word");
+    });
+    // TODO: response gets double set at undeinfed
   }, [val, setResponse]);
 
 
@@ -42,6 +48,9 @@ function NameForm() {
 
 function ResponseArea(props) {
   if (props.response) {
+    if (typeof(props.response) === 'string') {
+      return (<p>Not A Word</p>);
+    }
     const words = props.response.data;
     return (
       <ul>
