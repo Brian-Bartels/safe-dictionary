@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/safe-dictionary/static/css/main.55e86fd4.css",
-    "main.js": "/safe-dictionary/static/js/main.6471a6bb.js",
+    "main.css": "/safe-dictionary/static/css/main.0e0f62f7.css",
+    "main.js": "/safe-dictionary/static/js/main.ecd2f8c0.js",
     "index.html": "/safe-dictionary/index.html",
-    "main.55e86fd4.css.map": "/safe-dictionary/static/css/main.55e86fd4.css.map",
-    "main.6471a6bb.js.map": "/safe-dictionary/static/js/main.6471a6bb.js.map"
+    "main.0e0f62f7.css.map": "/safe-dictionary/static/css/main.0e0f62f7.css.map",
+    "main.ecd2f8c0.js.map": "/safe-dictionary/static/js/main.ecd2f8c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.55e86fd4.css",
-    "static/js/main.6471a6bb.js"
+    "static/css/main.0e0f62f7.css",
+    "static/js/main.ecd2f8c0.js"
   ]
 }
